@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import logo from '../assets/KIIT-FULL-LOGO-LEFT.png';
+import { logo } from '../assets';
 
 function Header() {
   return (

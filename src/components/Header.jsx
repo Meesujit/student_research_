@@ -1,10 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import logo from '../assets/KIIT-FULL-LOGO-LEFT.png';
 
 function Header() {
   return (
     <header className="header">
-      <h1>Student Research Society</h1>
+      <div className="logo-container">
+        <img src={logo} alt="Student Research Society Logo" className="logo" width={400}  />
+        {/* <h1>Student Research Society</h1> */}
+      </div>
       <nav>
         <ul>
           <li><Link to="/">About SRS</Link></li>

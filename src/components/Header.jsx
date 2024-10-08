@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { logo } from '../assets/index';
+import { logo } from '../assets/index.js';
 
 function Header() {
   return (

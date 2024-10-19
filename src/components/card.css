@@ -1,0 +1,31 @@
+/* Main container styles */
+.container {
+    max-width: 100%;
+    padding: 2rem;
+    margin: 0 auto;
+  }
+  
+  /* Container for cards, positioning the motion elements relative */
+  .card-container {
+    position: relative;
+    width: 300px; /* Define the width of the card grid */
+    height: 300px; /* Define the height of the card grid */
+    margin: 0 auto;
+  }
+  
+  /* Each card styling with absolute positioning */
+  .card {
+    position: absolute;
+    width: 140px;
+    height: 140px;
+  }
+  
+  /* Card image styling */
+  .card-image {
+    width: 100%;
+    height: 100%;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add shadow */
+    object-fit: cover;
+  }
+  

@@ -1,14 +1,12 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+
 
 /* General Styles */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+
   }
   
   .header {
@@ -315,6 +313,419 @@ body {
 
   .founder-content p {
       font-size: 16px; /* Maintain font size */
+  }
+}
+
+
+/* logo-carosule effect */
+
+.wrapper{
+  width: 100%;
+  margin-top: 6rem;
+  height: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.Text{
+  font-size: 35px;
+  font-weight: 500;
+  margin-bottom: 10px;
+  color: #02203c;
+}
+
+.Note{
+  font-size: 18px;
+  font-weight: 200;
+  margin-bottom: 40px;
+  color: #7c8e9a;
+}
+
+.marquee{
+  display: flex;
+  width: 1200px;
+  overflow: hidden;
+  user-select: none;
+
+  mask-image: linear-gradient(
+    to right,
+    hsl(0 0% 0% / 0),
+    hsl(0 0% 0% / 1) 10%,
+    hsl(0 0% 0% / 1) 90%,
+    hsl(0 0% 0% / 0)
+  );
+}
+
+@keyframes scrollX {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.MarqueeGroup {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  white-space: nowrap;
+  width: 100%;
+  animation: scrollX 30s linear infinite;
+}
+
+.MarqueeGroup2 {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  white-space: nowrap;
+  width: 100%;
+  animation: scrollX 30s linear infinite;
+  animation-direction: reverse;
+  animation-delay: -3s;
+}
+
+
+
+.ImageGroup{
+  display: grid;
+  place-items: center;
+  width: clamp(10rem, 1rem + 40vmin, 30rem);
+  padding: calc(clamp(10rem, 1rem + 30vmin, 30rem) / 10);
+}
+
+.Image{
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
+  border-radius: 0.5rem;
+  aspect-ratio: 16/9;
+  padding: 5px 20px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+
+.Research-group-container{
+width: 100%;
+height: 100vh;
+
+}
+
+.Research-group{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 20px;
+  padding: 20px;
+}
+
+.Research-group-content{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.Research-group-content h1{
+  font-size: 2rem;
+  margin-bottom: 10px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.Research-group-content p{
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+
+.container {
+  max-width: 100%;
+  padding: 2rem;
+  margin: 0 auto;
+}
+
+/* Container for cards, positioning the motion elements relative */
+.card-container {
+  position: relative;
+  width: 400px; /* Default width for small screens */
+  height: 400px; /* Default height for small screens */
+  margin: 0 auto;
+}
+
+/* Each card styling with absolute positioning */
+.card {
+  position: absolute;
+  width: 140px;  /* Default card width */
+  height: 140px; /* Default card height */
+}
+
+.card-image {
+  border-radius: 4px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add shadow */
+  object-fit: cover;
+}
+
+
+/* Container for the research group cards */
+.research-group-card-container {
+  display: grid;
+  grid-template-columns: 1fr; /* Stack items initially */
+  gap: 30px; /* Spacing between the research items */
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+@media (min-width: 768px) {
+  .research-group-card-container {
+    grid-template-columns: repeat(auto-fit, minmax(600px, 1fr)); /* Two-column layout for larger screens */
+  }
+}
+
+/* Each research group entry */
+.research-group-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: left;
+  border-radius: 12px; /* Subtle round corners */
+  overflow: hidden;
+  padding: 20px;
+  gap: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.research-group-card:hover {
+  background-color: #fafafa; /* Slight background change on hover */
+}
+
+@media (min-width: 768px) {
+  .research-group-card {
+    flex-direction: row; /* Side-by-side layout on larger screens */
+  }
+}
+
+/* Alternating layout: image on the right for even cards */
+.research-group-card:nth-child(even) {
+  flex-direction: row-reverse; /* Reverse the order for even cards */
+}
+
+/* Styling for the image */
+.research-group-card img {
+  flex-shrink: 0; /* Prevent image from shrinking */
+  width: 100%; /* Full width on small screens */
+  height: auto;
+  max-width: 300px; /* Restrict maximum width for large screens */
+  border-radius: 12px; /* Rounded corners */
+  object-fit: cover;
+}
+
+@media (min-width: 768px) {
+  .research-group-card img {
+    width: 300px; /* Fixed width for larger screens */
+    height: auto;
+  }
+}
+
+/* Text content styling */
+.research-group-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 20px;
+}
+
+/* Title styling */
+.research-group-content h3 {
+  font-size: 1.5rem; /* Larger font size */
+  margin-bottom: 10px;
+  color: #2c3e50; /* Dark blue-gray color */
+}
+
+/* Description styling */
+.research-group-content p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #7f8c8d; /* Lighter gray text */
+}
+
+/* Media queries for smaller devices */
+@media (max-width: 768px) {
+  .research-group-content h3,
+  .research-group-content p {
+    text-align: center; /* Center-align on smaller screens */
+  }
+}
+
+
+
+
+
+
+
+
+/* ******************** 
+New Events
+*********************** */
+/* FloatingAvatarHero.css */
+.floating-hero {
+  text-align: center;
+  padding: 50px 20px;
+  background-color: #f8f9fc;
+  position: relative;
+}
+
+.floating-hero-content h1 {
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.floating-hero-content p {
+  font-size: 18px;
+  margin-bottom: 20px;
+  color: #636e72;
+}
+
+.floating-cta-button {
+  background-color: #1e90ff;
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 50px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.floating-video-intro {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #636e72;
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+.floating-play-icon {
+  font-size: 24px;
+  margin-right: 10px;
+}
+
+/* Scattered avatar layout */
+.floating-avatar-grid {
+  position: relative;
+  width: 100%;
+  height: 400px; /* Adjust height as needed */
+  /* margin: 50px auto; */
+}
+
+.floating-avatar-item {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background-color: #fff;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: absolute;
+  transition: transform 0.3s ease-in-out; /* Hover effect */
+}
+
+.floating-avatar-item:hover {
+  transform: translateY(-10px);
+}
+
+.floating-avatar-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.floating-avatar-label {
+  position: absolute;
+  bottom: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: white;
+  padding: 5px 10px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  font-size: 12px;
+  color: #2d3436;
+}
+
+.floating-avatar-label span {
+  display: block;
+  font-size: 10px;
+  color: #636e72;
+}
+
+/* Example positioning for each avatar */
+.floating-avatar-1 {
+  top: -200px;
+  left: 5%;
+}
+
+.floating-avatar-2 {
+  top: -280px;
+  right: 5%;
+}
+
+.floating-avatar-3 {
+  top: 100px;
+  left: 40%;
+}
+
+.floating-avatar-4 {
+  bottom: 30px;
+  right: 35%;
+}
+
+.floating-avatar-5 {
+  bottom: -40px;
+  left: 10%;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+  .floating-avatar-item {
+      width: 100px;
+      height: 100px;
+  }
+
+  .floating-avatar-1 {
+      top: -20px;
+      left: 10%;
+  }
+
+  .floating-avatar-2 {
+      top: 20px;
+      right: 10%;
+  }
+
+  .floating-avatar-3 {
+      top: 80px;
+      left: 30%;
+  }
+
+  .floating-avatar-4 {
+      bottom: 20px;
+      right: 25%;
+  }
+
+  .floating-avatar-5 {
+      bottom: -20px;
+      left: 5%;
   }
 }
 

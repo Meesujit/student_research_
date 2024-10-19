@@ -3,6 +3,7 @@ import srsData from '../data/srsData';
 import { heroImage, location, objective, relational, SRSstudent } from '../assets';
 import SRSCard from '../components/SRSCard';
 import Founder from '../components/Founder';
+import CollaboratorsCarosoule from '../components/CollaboratorsCarosoule';
 function About() {
   return (
     <>
@@ -49,6 +50,7 @@ function About() {
           </div>
         </div>
         <Founder />
+        <CollaboratorsCarosoule />
       </section>      
     </>
   );
